@@ -18,6 +18,8 @@ git checkout v5.0.0
 # Installs and builds Canto daemon program
 make install
 
+cantod init plex --chain-id canto_7700-1
+sed -i 's/seeds = ""/seeds = "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:15556"/' ~/.cantod/config/config.toml
 rm -rf ~/.cantod/config/genesis.json
 wget https://raw.githubusercontent.com/Canto-Network/Canto/genesis/Networks/Mainnet/genesis.json -P $HOME/.cantod/config/
 
